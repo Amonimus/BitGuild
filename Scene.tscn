@@ -1,0 +1,258 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://script/Main/GameMonitor.gd" type="Script" id=1]
+[ext_resource path="res://script/Main/Inventory.gd" type="Script" id=2]
+[ext_resource path="res://script/GUI/MenuBarTop.gd" type="Script" id=3]
+[ext_resource path="res://img/Buttons/ButtonSettings.png" type="Texture" id=4]
+[ext_resource path="res://script/GUI/DungeonNavArrow.gd" type="Script" id=5]
+[ext_resource path="res://script/GUI/ButtonLoad.gd" type="Script" id=6]
+[ext_resource path="res://script/GUI/ButtonSettings.gd" type="Script" id=7]
+[ext_resource path="res://script/Main/Camera.gd" type="Script" id=8]
+[ext_resource path="res://img/Buttons/ArrowLeft.png" type="Texture" id=9]
+[ext_resource path="res://script/Main/Config.gd" type="Script" id=10]
+[ext_resource path="res://script/GUI/ButtonNavTabArrow.gd" type="Script" id=11]
+[ext_resource path="res://script/Main/GameControl.gd" type="Script" id=12]
+[ext_resource path="res://script/Specific/Guild.gd" type="Script" id=13]
+[ext_resource path="res://img/GuildSpirtes/GuildCounter.png" type="Texture" id=14]
+[ext_resource path="res://img/GuildSpirtes/GuildGate.png" type="Texture" id=15]
+[ext_resource path="res://img/exlamation.png" type="Texture" id=16]
+[ext_resource path="res://img/GuildSpirtes/GuildTable.png" type="Texture" id=17]
+[ext_resource path="res://img/GuildSpirtes/GuildBoard.png" type="Texture" id=18]
+[ext_resource path="res://script/GUI/DungeonGui.gd" type="Script" id=19]
+[ext_resource path="res://img/GuildGuideline.png" type="Texture" id=20]
+[ext_resource path="res://img/GUI/ScreenBar.png" type="Texture" id=21]
+[ext_resource path="res://img/GuildSpirtes/GuildBed.png" type="Texture" id=22]
+[ext_resource path="res://img/Buttons/ArrowDown.png" type="Texture" id=23]
+[ext_resource path="res://script/GUI/GuildGUI.gd" type="Script" id=24]
+[ext_resource path="res://img/Buttons/ArrowUp.png" type="Texture" id=25]
+[ext_resource path="res://img/Buttons/ButtonQuit.png" type="Texture" id=26]
+[ext_resource path="res://img/GUI/MenuBar.png" type="Texture" id=27]
+[ext_resource path="res://img/GUI/MenuBackground.png" type="Texture" id=28]
+[ext_resource path="res://script/GUI/ButtonExit.gd" type="Script" id=29]
+[ext_resource path="res://img/Buttons/ButtonStatistics.png" type="Texture" id=30]
+[ext_resource path="res://script/Main/CutscenePlayer.gd" type="Script" id=31]
+[ext_resource path="res://script/GUI/ButtonStatistics.gd" type="Script" id=32]
+[ext_resource path="res://script/Specific/DungeonProcessor.gd" type="Script" id=33]
+[ext_resource path="res://script/GUI/ButtonReset.gd" type="Script" id=34]
+[ext_resource path="res://script/GUI/ButtonSave.gd" type="Script" id=35]
+[ext_resource path="res://img/Buttons/ButtonReset.png" type="Texture" id=36]
+[ext_resource path="res://img/Buttons/ButtonSave.png" type="Texture" id=37]
+[ext_resource path="res://script/GUI/ButtonInventory.gd" type="Script" id=38]
+[ext_resource path="res://script/GUI/ButtonAdventList.gd" type="Script" id=39]
+
+[node name="Scene" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="GameControl" type="Node" parent="."]
+script = ExtResource( 12 )
+
+[node name="Config" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="GameMonitor" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="GameInventory" type="Control" parent="GameMonitor"]
+script = ExtResource( 2 )
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Screen1" type="Node2D" parent="Objects"]
+
+[node name="S1MenuBarTop" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 0, 64 )
+z_index = -1
+texture = ExtResource( 21 )
+centered = false
+
+[node name="S1MenuBarBottom" type="Sprite" parent="Objects/Screen1"]
+visible = false
+position = Vector2( 0, 512 )
+z_index = -1
+texture = ExtResource( 21 )
+centered = false
+
+[node name="MenuBackground" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 0, 128 )
+z_index = -1
+texture = ExtResource( 28 )
+centered = false
+
+[node name="ButtonSettings" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 56, 184 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="ButtonStatistics" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 176, 184 )
+texture = ExtResource( 30 )
+script = ExtResource( 32 )
+
+[node name="ButtonExit" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 304, 184 )
+texture = ExtResource( 26 )
+script = ExtResource( 29 )
+
+[node name="ButtonSave" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 176, 304 )
+texture = ExtResource( 37 )
+script = ExtResource( 35 )
+
+[node name="ButtonLoad" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 304, 304 )
+texture = ExtResource( 37 )
+script = ExtResource( 6 )
+
+[node name="ButtonReset" type="Sprite" parent="Objects/Screen1"]
+position = Vector2( 56, 304 )
+texture = ExtResource( 36 )
+script = ExtResource( 34 )
+
+[node name="Screen2" type="Node2D" parent="Objects"]
+position = Vector2( 360, 0 )
+
+[node name="MenuBackground2" type="Sprite" parent="Objects/Screen2"]
+visible = false
+position = Vector2( 0, 128 )
+z_index = -1
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Guild" type="Sprite" parent="Objects/Screen2"]
+position = Vector2( 0, 260 )
+z_index = -1
+centered = false
+script = ExtResource( 13 )
+
+[node name="Bed" type="Sprite" parent="Objects/Screen2/Guild"]
+position = Vector2( 248, -84 )
+texture = ExtResource( 22 )
+
+[node name="Board" type="Sprite" parent="Objects/Screen2/Guild"]
+position = Vector2( 248, 108 )
+texture = ExtResource( 18 )
+
+[node name="Counter" type="Sprite" parent="Objects/Screen2/Guild"]
+position = Vector2( 312, 172 )
+texture = ExtResource( 14 )
+
+[node name="Gate" type="Sprite" parent="Objects/Screen2/Guild"]
+position = Vector2( 56, 140 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -16 )
+
+[node name="Table" type="Sprite" parent="Objects/Screen2/Guild"]
+position = Vector2( 120, 44 )
+texture = ExtResource( 17 )
+
+[node name="S2MenuBarTop" type="Sprite" parent="Objects/Screen2"]
+position = Vector2( 0, 64 )
+z_index = -1
+texture = ExtResource( 21 )
+centered = false
+
+[node name="ButtonInventory" type="Sprite" parent="Objects/Screen2/S2MenuBarTop"]
+position = Vector2( 72, 32 )
+texture = ExtResource( 30 )
+script = ExtResource( 38 )
+
+[node name="ButtonAdvents" type="Sprite" parent="Objects/Screen2/S2MenuBarTop"]
+position = Vector2( 280, 32 )
+texture = ExtResource( 30 )
+script = ExtResource( 39 )
+
+[node name="GuildGUI" type="Node2D" parent="Objects/Screen2/S2MenuBarTop"]
+position = Vector2( 41, 32 )
+script = ExtResource( 24 )
+
+[node name="S2MenuBarBottom" type="Sprite" parent="Objects/Screen2"]
+visible = false
+position = Vector2( 0, 512 )
+z_index = -1
+texture = ExtResource( 21 )
+centered = false
+
+[node name="Screen3" type="Node2D" parent="Objects"]
+position = Vector2( 720, 0 )
+
+[node name="MenuBackground3" type="Sprite" parent="Objects/Screen3"]
+position = Vector2( 0, 128 )
+z_index = -1
+texture = ExtResource( 28 )
+centered = false
+
+[node name="DungeonProcessor" type="Sprite" parent="Objects/Screen3"]
+offset = Vector2( -148, -304 )
+script = ExtResource( 33 )
+
+[node name="DungeonGui" type="Sprite" parent="Objects/Screen3"]
+position = Vector2( 180, 96 )
+z_index = 2
+texture = ExtResource( 21 )
+script = ExtResource( 19 )
+
+[node name="ArrowUp" type="Sprite" parent="Objects/Screen3/DungeonGui"]
+position = Vector2( -148, 0 )
+texture = ExtResource( 25 )
+script = ExtResource( 5 )
+
+[node name="ArrowDown" type="Sprite" parent="Objects/Screen3/DungeonGui"]
+position = Vector2( 156, 0 )
+texture = ExtResource( 23 )
+script = ExtResource( 5 )
+
+[node name="S3MenuBarBottom" type="Sprite" parent="Objects/Screen3"]
+visible = false
+position = Vector2( 0, 512 )
+z_index = 2
+texture = ExtResource( 21 )
+centered = false
+
+[node name="Savedata" type="Node" parent="."]
+
+[node name="Camera" type="Camera2D" parent="."]
+z_index = 10
+anchor_mode = 0
+current = true
+editor_draw_screen = false
+script = ExtResource( 8 )
+
+[node name="CutscenePlayer" type="Sprite" parent="Camera"]
+position = Vector2( 0, 64 )
+texture = ExtResource( 16 )
+centered = false
+script = ExtResource( 31 )
+
+[node name="MenuBarTop" type="Sprite" parent="Camera"]
+z_index = -1
+texture = ExtResource( 27 )
+centered = false
+script = ExtResource( 3 )
+
+[node name="LeftArrow" type="Sprite" parent="Camera/MenuBarTop"]
+position = Vector2( 32, 32 )
+z_index = 1
+texture = ExtResource( 9 )
+script = ExtResource( 11 )
+
+[node name="RightArrow" type="Sprite" parent="Camera/MenuBarTop"]
+position = Vector2( 328, 32 )
+z_index = 1
+texture = ExtResource( 9 )
+script = ExtResource( 11 )
+
+[node name="MenuBarBottom" type="Sprite" parent="Camera"]
+position = Vector2( 0, 576 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="GuildGuideline" type="Sprite" parent="."]
+position = Vector2( 540, 376 )
+z_index = -2
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
